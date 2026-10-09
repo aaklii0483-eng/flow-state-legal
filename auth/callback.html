@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>TikTok Connection | Flow State</title>
+<style>body{font:16px/1.6 system-ui,sans-serif;max-width:650px;margin:12vh auto;padding:0 22px;color:#19212b}h1{font-size:1.7rem}main{padding:24px;border:1px solid #ddd;border-radius:14px}p{overflow-wrap:anywhere}a{color:#1456a0}</style></head>
+<body><main><h1>Flow State — TikTok Connection</h1><p id="status">Checking TikTok's response…</p><p>This page is part of the Flow State AI System integration setup.</p><a href="../../">Return to Flow State</a></main>
+<script>
+(function(){
+  const params=new URLSearchParams(location.search);
+  const status=document.getElementById('status');
+  if(params.has('error')) status.textContent='TikTok authorization was not completed. Error: '+params.get('error');
+  else if(params.has('code')) status.textContent='TikTok returned an authorization code. The secure server connection is not configured yet, so authorization cannot be completed. Please do not share the code.';
+  else status.textContent='No TikTok authorization response was received yet.';
+  if(location.search) history.replaceState(null,'',location.pathname);
+})();
+</script></body></html>
